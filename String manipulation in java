@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class StringManipulation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read input string from the user
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        // Reverse the string
+        String reversed = new StringBuilder(input).reverse().toString();
+        System.out.println("Reversed string: " + reversed);
+
+        // Convert to uppercase
+        String upperCase = input.toUpperCase();
+        System.out.println("Uppercase: " + upperCase);
+
+        // Convert to lowercase
+        String lowerCase = input.toLowerCase();
+        System.out.println("Lowercase: " + lowerCase);
+
+        // Find a substring
+        System.out.print("Enter a substring to search for: ");
+        String substring = scanner.nextLine();
+        if (input.contains(substring)) {
+            System.out.println("The substring \"" + substring + "\" was found in the string.");
+        } else {
+            System.out.println("The substring \"" + substring + "\" was not found in the string.");
+        }
+
+        // Replace characters
+        System.out.print("Enter the character to be replaced: ");
+        char oldChar = scanner.next().charAt(0);
+        System.out.print("Enter the new character: ");
+        char newChar = scanner.next().charAt(0);
+        String replacedString = input.replace(oldChar, newChar);
+        System.out.println("String after replacement: " + replacedString);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
